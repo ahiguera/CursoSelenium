@@ -3,6 +3,7 @@ package toe.test;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import toe.dto.HeroeDto;
@@ -36,6 +37,9 @@ public class EditarHeroeTest {
 		
 		editHeroePage.editarHeroe(heroeDto, driver);
 		
+		//Verificar que si quedó editado
+		
+		
 		
 	}
 	
@@ -63,6 +67,14 @@ public class EditarHeroeTest {
 		
 		editHeroePage.editarHeroe(heroeDto, driver);
 		
+		heroesPage.clicOnHeroeEnLista("Bombasto", driver);
+		
+		String telefonoActualizado = driver.findElement(heroesPage.txtPhone).getAttribute("value");
+		Assert.assertEquals(telefonoActualizado, "123456789");
+		
+		String direccionActualizada = driver.findElement(heroesPage.txtAddress).getAttribute("value");
+		Assert.assertEquals(direccionActualizada, "Nueva direccion");
+
 		
 	}
 	

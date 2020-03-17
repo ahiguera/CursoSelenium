@@ -22,9 +22,9 @@ public class HeroesPage {
 
 	public void crearHeroe(HeroeDto heroeDto,WebDriver driver) {
 		
-		driver.findElement(txtName).sendKeys("Storm");
-		driver.findElement(txtPhone).sendKeys("3101234578");
-		driver.findElement(txtAddress).sendKeys("4500 5th Avenue");
+		driver.findElement(txtName).sendKeys(heroeDto.getNombre());
+		driver.findElement(txtPhone).sendKeys(heroeDto.getTelefono());
+		driver.findElement(txtAddress).sendKeys(heroeDto.getDireccion());
 		
 		driver.findElement(btnAdd).click();
 		
@@ -32,7 +32,24 @@ public class HeroesPage {
 	
 		
 	public void clicOnHeroeEnLista(String heroeName, WebDriver driver) {
-		
+
+		WebElement heroe = buscarHeroeEnLista(heroeName, driver);
+		if (heroe != null) {
+			heroe.click();
+		}
+	}
+	
+	
+	public boolean existeHeroeEnLista(String heroeName, WebDriver driver) {
+
+		WebElement heroe = buscarHeroeEnLista(heroeName, driver);
+		if (heroe != null) {
+			return true;
+		}
+		return false;
+	}
+	
+	public WebElement buscarHeroeEnLista(String heroeName, WebDriver driver) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.tagName("li")));
 				
@@ -42,11 +59,33 @@ public class HeroesPage {
 		for (WebElement heroe : listaHeroes) {
 			String texto = heroe.getText();
 			if (texto.contains(heroeName)) {
-				heroe.click();
-				break;
+				return heroe;
 			}
 		}
-
+		
+		return null;
 	}
+	
+	
+	public String getTelefono(WebDriver driver) {
+
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(txtPhone));
+		
+		return driver.findElement(txtPhone).getAttribute("value");
+		
+	}
+
+	
+	public String getDireccion(WebDriver driver) {
+
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(txtAddress));
+		
+		return driver.findElement(txtAddress).getAttribute("value");
+		
+	}
+
+	
 	
 }
