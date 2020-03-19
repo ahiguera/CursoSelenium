@@ -1,13 +1,13 @@
-package toe.pages;
+package heroes.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import toe.dto.HeroeDto;
+import heroes.dto.HeroeDto;
 
-public class EditHeroePage {
+public class DetailHeroesPage {
 
 	public By txtName = By.id("txtName");
 	

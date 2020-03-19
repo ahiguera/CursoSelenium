@@ -1,4 +1,4 @@
-package toe.dto;
+package heroes.dto;
 
 public class HeroeDto {
 
