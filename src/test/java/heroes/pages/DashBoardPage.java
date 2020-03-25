@@ -1,8 +1,8 @@
-package toe.pages;
+package heroes.pages;
 
 import org.openqa.selenium.By;
 
-public class HeaderPage {
+public class DashBoardPage {
 
 	public By btnDashBoard = By.id("btnDashBoard");
 	

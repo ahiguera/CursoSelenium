@@ -1,4 +1,6 @@
-package toe.pages;
+package heroes.pages;
+
+
 
 import java.util.List;
 
@@ -8,9 +10,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import toe.dto.HeroeDto;
+import heroes.dto.HeroeDto;
 
-public class HeroesPage {
+
+public class GestionarHeroesPage {
 
 	public By txtName = By.id("txtName");
 	

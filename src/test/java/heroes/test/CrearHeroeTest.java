@@ -1,12 +1,15 @@
-package toe.test;
+package heroes.test;
+
+
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import toe.dto.HeroeDto;
-import toe.pages.HeaderPage;
-import toe.pages.HeroesPage;
+import heroes.dto.HeroeDto;
+import heroes.pages.DashBoardPage;
+import heroes.pages.GestionarHeroesPage;
+
 
 public class CrearHeroeTest {
 
@@ -23,8 +26,8 @@ public class CrearHeroeTest {
 		driver.get("http://localhost:4200");
 		
 		//Crea instancias de los page object model
-		HeaderPage headerPage = new HeaderPage();
-		HeroesPage heroesPage = new HeroesPage();
+		DashBoardPage headerPage = new DashBoardPage();
+		GestionarHeroesPage heroesPage = new GestionarHeroesPage();
 		
 		
 		// Se crea el dto con los datos del heroe a crear.
