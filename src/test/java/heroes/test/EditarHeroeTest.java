@@ -1,14 +1,14 @@
-package heroes.test;
+package toe.test;
 
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import heroes.dto.HeroeDto;
-import heroes.pages.DashBoardPage;
-import heroes.pages.DetailHeroesPage;
-import heroes.pages.GestionarHeroesPage;
+import toe.dto.HeroeDto;
+import toe.pages.EditHeroePage;
+import toe.pages.HeaderPage;
+import toe.pages.HeroesPage;
 
 public class EditarHeroeTest {
 	
@@ -21,9 +21,9 @@ public class EditarHeroeTest {
 		driver.get("http://localhost:4200");
 		
 		//Crea instancias de los page object model
-		DashBoardPage headerPage = new DashBoardPage();
-		GestionarHeroesPage heroesPage = new GestionarHeroesPage();
-		DetailHeroesPage editHeroePage = new DetailHeroesPage();
+		HeaderPage headerPage = new HeaderPage();
+		HeroesPage heroesPage = new HeroesPage();
+		EditHeroePage editHeroePage = new EditHeroePage();
 		
 		driver.findElement(headerPage.btnHeroes).click();
 		
@@ -48,9 +48,9 @@ public class EditarHeroeTest {
 		driver.get("http://localhost:4200");
 		
 		//Crea instancias de los page object model
-		DashBoardPage headerPage = new DashBoardPage();
-		GestionarHeroesPage heroesPage = new GestionarHeroesPage();
-		DetailHeroesPage editHeroePage = new DetailHeroesPage();
+		HeaderPage headerPage = new HeaderPage();
+		HeroesPage heroesPage = new HeroesPage();
+		EditHeroePage editHeroePage = new EditHeroePage();
 		
 		driver.findElement(headerPage.btnHeroes).click();
 		
@@ -76,9 +76,9 @@ public class EditarHeroeTest {
 		driver.get("http://localhost:4200");
 		
 		//Crea instancias de los page object model
-		DashBoardPage headerPage = new DashBoardPage();
-		GestionarHeroesPage heroesPage = new GestionarHeroesPage();
-		DetailHeroesPage editHeroePage = new DetailHeroesPage();
+		HeaderPage headerPage = new HeaderPage();
+		HeroesPage heroesPage = new HeroesPage();
+		EditHeroePage editHeroePage = new EditHeroePage();
 		
 		driver.findElement(headerPage.btnHeroes).click();
 		

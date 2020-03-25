@@ -1,4 +1,4 @@
-package heroes.pages;
+package toe.pages;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import heroes.dto.HeroeDto;
+import toe.dto.HeroeDto;
 
-public class GestionarHeroesPage {
+public class HeroesPage {
 
 	public By txtName = By.id("txtName");
 	
@@ -22,9 +22,9 @@ public class GestionarHeroesPage {
 
 	public void crearHeroe(HeroeDto heroeDto,WebDriver driver) {
 		
-		driver.findElement(txtName).sendKeys(heroeDto.getNombre());
-		driver.findElement(txtPhone).sendKeys(heroeDto.getTelefono());
-		driver.findElement(txtAddress).sendKeys(heroeDto.getDireccion());
+		driver.findElement(txtName).sendKeys("Storm");
+		driver.findElement(txtPhone).sendKeys("3101234578");
+		driver.findElement(txtAddress).sendKeys("4500 5th Avenue");
 		
 		driver.findElement(btnAdd).click();
 		
